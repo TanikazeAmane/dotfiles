@@ -83,9 +83,13 @@ zinit light Aloxaf/fzf-tab
 
 zstyle ':completion:*' menu no
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'lsd --color=always --icon=always -1 $realpath'
+BAT_COMMAND="bat"
+if type batcat &>/dev/null; then
+    BAT_COMMAND="batcat"
+fi
 zstyle ':fzf-tab:complete:vim:*' fzf-preview '
     if [[ -f $realpath ]]; then
-        bat --color=always --style=numbers --line-range=:200 $realpath
+        '$BAT_COMMAND' --color=always --style=numbers --line-range=:200 $realpath
     elif [[ -d $realpath ]]; then
         lsd --color=always --icon=always -1 $realpath
     else
