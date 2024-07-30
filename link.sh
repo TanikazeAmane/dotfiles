@@ -24,3 +24,7 @@ case "$OSTYPE" in
         create_symlink "$(pwd)/gitconfig/unix" "$HOME/.gitconfig"
         ;;
 esac
+
+if [ "$OSTYPE" == darwin* ]; then
+    create_symlink "$(pwd)/.hushlogin" "$HOME/.hushlogin"
+fi
