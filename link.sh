@@ -17,14 +17,14 @@ create_symlink "$(pwd)/.condarc" "$HOME/.condarc"
 create_symlink "$(pwd)/.vimrc" "$HOME/.vimrc"
 
 case "$OSTYPE" in
+    darwin*)
+        create_symlink "$(pwd)/gitconfig/unix" "$HOME/.gitconfig"
+        create_symlink "$(pwd)/.hushlogin" "$HOME/.hushlogin"
+        ;;
+    linux*)
+        create_symlink "$(pwd)/gitconfig/unix" "$HOME/.gitconfig"
+        ;;
     msys*)
         create_symlink "$(pwd)/gitconfig/msys" "$HOME/.gitconfig"
         ;;
-    *)
-        create_symlink "$(pwd)/gitconfig/unix" "$HOME/.gitconfig"
-        ;;
 esac
-
-if [ "$OSTYPE" == darwin* ]; then
-    create_symlink "$(pwd)/.hushlogin" "$HOME/.hushlogin"
-fi
