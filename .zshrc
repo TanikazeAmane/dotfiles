@@ -35,8 +35,8 @@ alias ps="procs"
 alias ff="fastfetch --pipe false --config $HOME/.config/fastfetch/ff.jsonc"
 ff
 
-export ZSHRC_PRESET_DIR=$HOME/.zsh.d/presets
-export ZSHRC_LOCAL_DIR=$HOME/.zsh.d/local
+export ZSHRC_PRESET_DIR=$HOME/.config/zsh.d/presets
+export ZSHRC_LOCAL_DIR=$HOME/.config/zsh.d/local
 
 case "$OSTYPE" in
     darwin*)
