@@ -3,7 +3,21 @@
 create_symlink() {
     local source=$1
     local target=$2
-    ln -sfn "$source" "$target"
+
+    if [ "$OSTYPE" = "msys" ]; then
+        local win_source=$(cygpath -w "$source")
+        local win_target=$(cygpath -w "$target")
+        if [ -e "$target" ] || [ -L "$target" ]; then
+            rm -rf "$target"
+        fi
+        if [ -d "$source" ]; then
+            cmd.exe //c "mklink /d $win_target $win_source" > /dev/null 2>&1
+        else
+            cmd.exe //c "mklink $win_target $win_source" > /dev/null 2>&1
+        fi
+    else
+        ln -sfn "$source" "$target"
+    fi
     echo "$target -> $source"
 }
 
