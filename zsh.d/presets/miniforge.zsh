@@ -32,4 +32,6 @@ if [ -n "$CONDA_PATH" ]; then
             # <<< conda initialize <<<
             ;;
     esac
+    zinit ice lucid wait"1"
+    zinit light conda-incubator/conda-zsh-completion
 fi
