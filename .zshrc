@@ -109,4 +109,5 @@ zinit light zdharma-continuum/fast-syntax-highlighting
 zinit ice lucid wait"1"
 source $ZSHRC_PRESET_DIR/miniforge.zsh
 
+eval "$(zoxide init zsh)"
 source <(fzf --zsh)
