@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 create_symlink() {
     local source=$1
