@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 create_symlink() {
     local source=$1
@@ -6,6 +6,8 @@ create_symlink() {
     ln -sfn "$source" "$target"
     echo "$target -> $source"
 }
+
+mkdir -p ~/.config
 
 create_symlink "$(pwd)/starship/starship.toml" "$HOME/.config/starship.toml"
 create_symlink "$(pwd)/fastfetch" "$HOME/.config/fastfetch"
