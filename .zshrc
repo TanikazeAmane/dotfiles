@@ -88,6 +88,7 @@ zinit light Aloxaf/fzf-tab
 
 zstyle ':completion:*' menu no
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'lsd --color=always --icon=always -1 $realpath'
+zstyle ':fzf-tab:complete:z:*' fzf-preview 'lsd --color=always --icon=always -1 $realpath'
 if [[ $FZF_PREVIEW -eq 1 ]]; then
     BAT_COMMAND="bat"
     if type batcat &>/dev/null; then
