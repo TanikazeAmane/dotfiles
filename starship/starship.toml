@@ -21,6 +21,7 @@ $directory\
 )\
 $cmd_duration\
 $hostname\
+$custom\
 $time\
 \n$character\
 """
@@ -49,6 +50,7 @@ clang = "#00599D"
 package = "#BA6607"
 duration = "#F4FBFF"
 hostname = "#3A4050"
+kernel = "#3F434f"
 text_color = "#EDF2F4"
 text_light = "#26272A"
 
@@ -221,3 +223,10 @@ format = "[ ](fg:swift)[$symbol$version]($style)[](fg:swift)"
 version_format = "${raw}"
 style = "bg:swift fg:text_color"
 symbol = " "
+
+[custom.kernel]
+format = " [](fg:kernel)[$symbol$output]($style)[](fg:kernel)"
+command = "[[ \"$OSTYPE\" == msys* ]] && uname -s || uname -sr"
+when = true
+style = "bg:kernel fg:text_color"
+symbol = " "
