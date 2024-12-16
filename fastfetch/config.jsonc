@@ -20,13 +20,13 @@
             "keyColor": "green"
         },
         {
-            "type": "disk",
-            "key": "├─",
+            "type": "swap",
+            "key": "├─󰓡",
             "keyColor": "green"
         },
         {
-            "type": "swap",
-            "key": "├─󰓡",
+            "type": "disk",
+            "key": "├─",
             "keyColor": "green"
         },
         {
@@ -40,13 +40,13 @@
             "keyColor": "green"
         },
         {
-            "type": "battery",
-            "key": "├─",
+            "type": "poweradapter",
+            "key": "├─",
             "keyColor": "green"
         },
         {
-            "type": "poweradapter",
-            "key": "├─",
+            "type": "battery",
+            "key": "├─",
             "keyColor": "green"
         },
         {
@@ -55,13 +55,18 @@
             "keyColor": "green"
         },
         {
-            "type": "bluetooth",
-            "key": "├─",
+            "type": "media",
+            "key": "├─󰝚",
             "keyColor": "green"
         },
         {
             "type": "sound",
-            "key": "╰─",
+            "key": "├─",
+            "keyColor": "green"
+        },
+        {
+            "type": "uptime",
+            "key": "╰─󰅐",
             "keyColor": "green"
         },
         "break",
@@ -128,16 +133,6 @@
             "keyColor": "blue"
         },
         {
-            "type": "uptime",
-            "key": "├─󰅐",
-            "keyColor": "blue"
-        },
-        {
-            "type": "media",
-            "key": "├─󰝚",
-            "keyColor": "blue"
-        },
-        {
             "type": "wifi",
             "key": "├─",
             "format": "{ssid}",
@@ -147,6 +142,11 @@
             "type": "localip",
             "key": "├─󰩟",
             "compact": true,
+            "keyColor": "blue"
+        },
+        {
+            "type": "bluetooth",
+            "key": "├─",
             "keyColor": "blue"
         },
         {
