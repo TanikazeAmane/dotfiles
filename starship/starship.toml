@@ -226,7 +226,7 @@ symbol = " "
 
 [custom.kernel]
 format = " [](fg:kernel)[$symbol$output]($style)[](fg:kernel)"
-command = "[[ \"$OSTYPE\" == msys* ]] && uname -s || uname -sr"
+command = "echo $KERNEL_INFO"
 when = true
 style = "bg:kernel fg:text_color"
 symbol = " "
