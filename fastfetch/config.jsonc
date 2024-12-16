@@ -86,11 +86,6 @@
             "keyColor": "yellow"
         },
         {
-            "type": "lm",
-            "key": "├─󰧨",
-            "keyColor": "yellow"
-        },
-        {
             "type": "de",
             "key": "├─",
             "keyColor": "yellow"
@@ -107,7 +102,12 @@
         },
         {
             "type": "icons",
-            "key": "╰─󰀻",
+            "key": "├─󰀻",
+            "keyColor": "yellow"
+        },
+        {
+            "type": "lm",
+            "key": "╰─󰧨",
             "keyColor": "yellow"
         },
         "break",
