@@ -35,11 +35,9 @@ alias tree="lsd --tree"
 alias cat="bat"
 alias ps="procs"
 
-alias ff="fastfetch --pipe false --config $HOME/.config/fastfetch/ff.jsonc"
-ff
-
 export ZSHRC_PRESET_DIR=$HOME/.config/zsh.d/presets
 export ZSHRC_LOCAL_DIR=$HOME/.config/zsh.d/local
+export TERMINAL_HEIGHT_THRESHOLD=30
 
 case "$OSTYPE" in
     darwin*)
@@ -59,6 +57,17 @@ esac
         . $f
     done
 }
+
+_ff() {
+    if [[ $LINES -lt $TERMINAL_HEIGHT_THRESHOLD ]]; then
+        fastfetch --pipe false --config $HOME/.config/fastfetch/ff.jsonc
+    else
+        fastfetch --pipe false
+    fi
+}
+
+alias ff="_ff"
+ff
 
 zinit wait lucid for \
     OMZL::git.zsh \
