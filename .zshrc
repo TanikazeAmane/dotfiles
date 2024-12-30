@@ -1,5 +1,5 @@
 export PATH="$HOME/.local/bin:$PATH"
-export KERNEL_INFO=$([[ \"$OSTYPE\" == msys* ]] && uname -s || uname -sr)
+export KERNEL_INFO=$([[ $OSTYPE == msys* ]] && uname -s || uname -sr)
 
 eval "$(starship init zsh)"
 
