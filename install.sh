@@ -44,7 +44,8 @@ case "$OSTYPE" in
         fi
         ;;
     msys*)
-        pacman -Sy --needed $MINGW_PACKAGE_PREFIX-git-lfs $MINGW_PACKAGE_PREFIX-delta \
+        pacman -Sy --needed git zsh vim zip unzip curl axel ncdu --noconfirm
+        pacman -S --needed $MINGW_PACKAGE_PREFIX-git-lfs $MINGW_PACKAGE_PREFIX-delta \
             $MINGW_PACKAGE_PREFIX-bat $MINGW_PACKAGE_PREFIX-fd $MINGW_PACKAGE_PREFIX-fzf $MINGW_PACKAGE_PREFIX-jq $MINGW_PACKAGE_PREFIX-lsd $MINGW_PACKAGE_PREFIX-procs $MINGW_PACKAGE_PREFIX-ripgrep $MINGW_PACKAGE_PREFIX-starship $MINGW_PACKAGE_PREFIX-yazi $MINGW_PACKAGE_PREFIX-zoxide \
             $MINGW_PACKAGE_PREFIX-fastfetch $MINGW_PACKAGE_PREFIX-onefetch $MINGW_PACKAGE_PREFIX-python-tldr --noconfirm
         pacman -S --needed base-devel $MINGW_PACKAGE_PREFIX-toolchain $MINGW_PACKAGE_PREFIX-clang-tools-extra $MINGW_PACKAGE_PREFIX-cmake --noconfirm
