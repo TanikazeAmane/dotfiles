@@ -23,7 +23,7 @@ case "$OSTYPE" in
                 fastfetch onefetch tldr \
                 zip unzip unarchiver p7zip par2cmdline \
                 screen byobu \
-                curl axel lsof dnsutils \
+                curl axel lsof inetutils dnsutils \
                 exfatprogs \
                 llvm lld clang gcc cmake ninja \
                 imagemagick ffmpeg \
