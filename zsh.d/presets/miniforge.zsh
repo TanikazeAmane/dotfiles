@@ -7,14 +7,13 @@ if [ -n "$CONDA_PATH" ]; then
             # >>> conda initialize >>>
             # !! Contents within this block are managed by 'conda init' !!
             source "$CONDA_PATH/etc/profile.d/mamba.sh"
-            CONDA_EXE="$CONDA_PATH/Scripts/conda.exe"
-            eval "$($CONDA_EXE 'shell.zsh' 'hook' | sed -e 's/"$CONDA_EXE" $_CE_M $_CE_CONDA "$@"/"$CONDA_EXE" $_CE_M $_CE_CONDA "$@" | tr -d \x27\\r\x27/g')"
+            eval "$(${CONDA_PATH}/Scripts/conda.exe 'shell.zsh' 'hook' | sed -e 's/"$CONDA_EXE" $_CE_M $_CE_CONDA "$@"/"$CONDA_EXE" $_CE_M $_CE_CONDA "$@" | tr -d \x27\\r\x27/g')"
             # <<< conda initialize <<<
             ;;
         *)
             # >>> conda initialize >>>
             # !! Contents within this block are managed by 'conda init' !!
-            __conda_setup="$('$CONDA_PATH/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+            __conda_setup="$(${CONDA_PATH}/bin/conda 'shell.zsh' 'hook' 2> /dev/null)"
             if [ $? -eq 0 ]; then
                 eval "$__conda_setup"
             else
