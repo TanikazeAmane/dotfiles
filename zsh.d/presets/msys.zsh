@@ -8,14 +8,14 @@ zstyle ':completion:*' fake-files /: "/:$drives"
 unset drives
 
 _explorer_open() {
-  if [ -z "$1" ]; then
-    explorer .
-  else
-    path=$(cygpath -w "$1")
-    if [ -d "$1" ]; then
-      explorer "$path"
+    if [ -z "$1" ]; then
+        explorer .
     else
-      start "" "$path"
+        __path=$(cygpath -w "$1")
+        if [ -d "$1" ]; then
+            explorer "$__path"
+        else
+            start "" "$__path"
+        fi
     fi
-  fi
 }
