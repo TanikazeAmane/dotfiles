@@ -119,6 +119,10 @@ zstyle ':fzf-tab:*' fzf-command ftb-tmux-popup
 zinit ice wait lucid atinit"ZINIT[COMPINIT_OPTS]=-C; zicompinit; zicdreplay"
 zinit light zdharma-continuum/fast-syntax-highlighting
 
+zinit wait lucid for \
+    OMZP::brew \
+    OMZP::rust
+
 zinit ice lucid wait"1"
 source $ZSHRC_PRESET_DIR/miniforge.zsh
 
