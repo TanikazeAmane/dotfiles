@@ -1,6 +1,6 @@
 export HOMEBREW_NO_ANALYTICS=1
 
-alias upgrade="brew update && brew update --cask && brew upgrade --greedy && brew cleanup --prune=all"
+alias upgrade="brew update && brew upgrade --greedy && brew cleanup --prune=all"
 
 if [ "$TERM_PROGRAM" = "vscode" ]; then
     alias cls="clear && ff"
