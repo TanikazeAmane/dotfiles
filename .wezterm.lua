@@ -15,4 +15,19 @@ config.initial_cols = 150
 
 config.scrollback_lines = 50000
 
+if wezterm.target_triple == 'x86_64-pc-windows-msvc' then
+    local clang64_msys2 = {
+        "C:/msys64/msys2_shell.cmd",
+        "-defterm",
+        "-here",
+        "-no-start",
+        "-full-path",
+        "-clang64",
+        "-shell",
+        "zsh"
+    }
+
+    config.default_prog = clang64_msys2
+end
+
 return config
