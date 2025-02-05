@@ -26,8 +26,10 @@ if wezterm.target_triple == 'x86_64-pc-windows-msvc' then
         "-shell",
         "zsh"
     }
+    local user = os.getenv("USERNAME")
 
     config.default_prog = clang64_msys2
+    config.default_cwd = "C:/msys64/home/" .. user
 end
 
 return config
