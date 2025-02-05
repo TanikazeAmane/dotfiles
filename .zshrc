@@ -119,9 +119,8 @@ zstyle ':fzf-tab:*' fzf-command ftb-tmux-popup
 zinit ice wait lucid atinit"ZINIT[COMPINIT_OPTS]=-C; zicompinit; zicdreplay"
 zinit light zdharma-continuum/fast-syntax-highlighting
 
-zinit wait lucid for \
-    OMZP::brew \
-    OMZP::rust
+zinit as="completion" for \
+  OMZP::rust/_rustc
 
 eval "$(zoxide init zsh)"
 source <(fzf --zsh)
