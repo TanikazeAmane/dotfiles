@@ -1,0 +1,232 @@
+format = """\
+$os\
+$username\
+$directory\
+(\
+    $git_branch\
+    $git_status\
+)\
+(\
+    $nodejs\
+    $dart\
+    $python\
+    $conda\
+    $rust\
+    $java\
+    $kotlin\
+    $swift\
+    $golang\
+    $c\
+    $package\
+)\
+$cmd_duration\
+$hostname\
+$custom\
+$time\
+\n$character\
+"""
+
+add_newline = false
+
+palette = "normal"
+
+[palettes.normal]
+os = "#2C3032"
+os_admin = "#6A040F"
+directory = "#363C3E"
+time = "#474D5C"
+git = "#D0DBDA"
+git_status = "#DFEBED"
+node = "#F1DEA9"
+dart = "#0A8CF7"
+python = "#F5CB5C"
+conda = "#3EB049"
+rust = "#C33C00"
+java = "#861215"
+kotlin = "#A97BFF"
+swift = "#FF9500"
+golang = "#00ADD8"
+clang = "#00599D"
+package = "#BA6607"
+duration = "#F4FBFF"
+hostname = "#3A4050"
+kernel = "#3F434f"
+text_color = "#EDF2F4"
+text_light = "#26272A"
+
+[os]
+disabled = false
+format = " [](fg:os)[$symbol$style]($style)"
+style = "fg:text_color bg:os"
+
+[os.symbols]
+Alpaquita = " "
+Alpine = " "
+AlmaLinux = " "
+Amazon = " "
+Android = " "
+Arch = " "
+Artix = " "
+CentOS = " "
+Debian = " "
+DragonFly = " "
+Emscripten = " "
+EndeavourOS = " "
+Fedora = " "
+FreeBSD = " "
+Garuda = "󰛓 "
+Gentoo = " "
+HardenedBSD = "󰞌 "
+Illumos = "󰈸 "
+Kali = " "
+Linux = " "
+Mabox = " "
+Macos = " "
+Manjaro = " "
+Mariner = " "
+MidnightBSD = " "
+Mint = " "
+NetBSD = " "
+NixOS = " "
+OpenBSD = "󰈺 "
+openSUSE = " "
+OracleLinux = "󰌷 "
+Pop = " "
+Raspbian = " "
+Redhat = " "
+RedHatEnterprise = " "
+RockyLinux = " "
+Redox = "󰀘 "
+Solus = "󰠳 "
+SUSE = " "
+Ubuntu = " "
+Unknown = " "
+Void = " "
+Windows = "󰍲 "
+
+[username]
+disabled = false
+show_always = true
+style_user = 'os'
+style_root = 'os_admin'
+format = '[$user](bg:$style fg:text_color)[]($style)'
+
+[directory]
+format = " [](fg:directory)[  $path ]($style)[$read_only]($read_only_style)[](fg:directory)"
+style = "fg:text_color bg:directory"
+read_only_style = "fg:text_color bg:directory"
+before_repo_root_style = "fg:text_color bg:directory"
+truncation_length = 8
+truncate_to_repo = true
+truncation_symbol = "…/"
+read_only = " 󰌾 "
+
+[time]
+disabled = false
+format = " [](fg:time)[ $time]($style)[](fg:time)"
+time_format = "%H:%M:%S"
+style = "fg:text_color bg:time"
+
+[cmd_duration]
+format = " [](fg:duration)[ $duration]($style)[](fg:duration)"
+style = "fg:text_light bg:duration"
+min_time = 1_000
+
+[character]
+success_symbol = "[❯](fg:green)"
+error_symbol = "[❯](fg:red)"
+
+[git_branch]
+format = " [](fg:git)[$symbol$branch](fg:text_light bg:git)[](fg:git)"
+symbol = " "
+
+[git_status]
+format = '([ ](fg:git_status)[ $all_status$ahead_behind ]($style)[](fg:git_status))'
+style = "fg:text_light bg:git_status"
+
+[c]
+disabled = false
+format = "[ ](fg:clang)[$symbol($version(-$name) )](bg:clang fg:text_color)[](fg:clang)"
+version_format = "${raw}"
+symbol = " "
+
+[conda]
+disabled = false
+format = "[ ](fg:conda)[$symbol$environment]($style)[](fg:conda)"
+ignore_base = false
+style = "bg:conda fg:text_color"
+symbol = " "
+
+[dart]
+disabled = false
+format = "[ ](fg:dart)[$symbol$version]($style)[](fg:dart)"
+version_format = "${raw}"
+style = "bg:dart fg:text_color"
+symbol = " "
+
+[golang]
+disabled = false
+format = "[ ](fg:golang)[$symbol$version]($style)[](fg:golang)"
+version_format = "${raw}"
+style = "bg:golang fg:text_color"
+symbol = " "
+
+[hostname]
+format = " [](fg:hostname)[$ssh_symbol$hostname]($style)[](fg:hostname)"
+ssh_only = false
+style = "fg:text_color bg:hostname"
+ssh_symbol = " "
+
+[java]
+disabled = false
+format = "[ ](fg:java)[$symbol$version](bg:java fg:text_color)[](fg:java)"
+version_format = "${raw}"
+symbol = " "
+
+[kotlin]
+disabled = false
+format = "[ ](fg:kotlin)[$symbol$version]($style)[](fg:kotlin)"
+version_format = "${raw}"
+style = "bg:kotlin fg:text_color"
+symbol = " "
+
+[nodejs]
+disabled = false
+format = "[ ](fg:node)[$symbol$version]($style)[](fg:node)"
+version_format = "${raw}"
+style = "bg:node fg:text_light"
+symbol = " "
+
+[package]
+disabled = false
+format = "[ ](fg:package)[$symbol$version]($style)[](fg:package)"
+version_format = "${raw}"
+symbol = "󰏗 "
+style = "bg:package fg:text_color"
+
+[python]
+disabled = false
+format = '[ ](fg:python)[${symbol}${pyenv_prefix}(${version} )(\($virtualenv\))]($style)[](fg:python)'
+version_format = "${raw}"
+style = "fg:text_light bg:python"
+symbol = " "
+
+[rust]
+disabled = false
+format = "[ ](fg:rust)[$symbol$version](bg:rust fg:text_color)[](fg:rust)"
+version_format = "${raw}"
+symbol = " "
+
+[swift]
+disabled = false
+format = "[ ](fg:swift)[$symbol$version]($style)[](fg:swift)"
+version_format = "${raw}"
+style = "bg:swift fg:text_color"
+symbol = " "
+
+[custom.kernel]
+format = " [](fg:kernel)[$symbol$output]($style)[](fg:kernel)"
+command = "echo $KERNEL_INFO"
+when = true
+style = "bg:kernel fg:text_color"
+symbol = " "

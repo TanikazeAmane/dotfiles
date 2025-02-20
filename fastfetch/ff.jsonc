@@ -1,0 +1,89 @@
+{
+    "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+    "general": {
+        "processingTimeout": 50
+    },
+    "logo": {
+        "type": "small",
+        "padding": {
+            "left": 2
+        }
+    },
+    "display": {
+        "separator": " "
+    },
+    "modules": [
+        {
+            "type": "memory",
+            "key": "╭─󰑭",
+            "keyColor": "green"
+        },
+        {
+            "type": "swap",
+            "key": "├─󰓡",
+            "keyColor": "green"
+        },
+        {
+            "type": "disk",
+            "key": "├─",
+            "keyColor": "green"
+        },
+        {
+            "type": "brightness",
+            "key": "├─󰃞",
+            "keyColor": "green"
+        },
+        {
+            "type": "poweradapter",
+            "key": "├─",
+            "keyColor": "green"
+        },
+        {
+            "type": "battery",
+            "key": "├─",
+            "keyColor": "green"
+        },
+        {
+            "type": "media",
+            "key": "├─󰝚",
+            "keyColor": "green"
+        },
+        {
+            "type": "sound",
+            "key": "├─",
+            "keyColor": "green"
+        },
+        {
+            "type": "uptime",
+            "key": "╰─󰅐",
+            "keyColor": "green"
+        },
+        {
+            "type": "os",
+            "key": "╭─{icon}",
+            "keyColor": "blue"
+        },
+        {
+            "type": "wifi",
+            "key": "├─",
+            "format": "{ssid}",
+            "keyColor": "blue"
+        },
+        {
+            "type": "localip",
+            "key": "├─󰩟",
+            "compact": true,
+            "keyColor": "blue"
+        },
+        {
+            "type": "bluetooth",
+            "key": "├─",
+            "keyColor": "blue"
+        },
+        {
+            "type": "locale",
+            "key": "╰─",
+            "keyColor": "blue"
+        }
+    ]
+}

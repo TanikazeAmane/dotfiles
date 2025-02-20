@@ -1,0 +1,33 @@
+[core]
+    autocrlf = input
+    editor = vim
+    quotePath = false
+    pager = delta
+[color]
+    ui = true
+[interactive]
+    diffFilter = delta --color-only
+[delta]
+    line-numbers = true
+    diff-so-fancy = true
+    navigate = true
+    light = true
+[merge]
+    conflictstyle = diff3
+[diff]
+    colorMoved = default
+[pager]
+    log = less
+[init]
+    defaultBranch = main
+[gpg]
+    program = gpg
+[commit]
+    gpgSign = true
+[tag]
+    gpgSign = true
+[filter "lfs"]
+    smudge = git-lfs smudge -- %f
+    process = git-lfs filter-process
+    required = true
+    clean = git-lfs clean -- %f
